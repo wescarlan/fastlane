@@ -105,7 +105,7 @@ module Match
       def delete_files(files_to_delete: [], custom_message: nil)
         # No specific list given, e.g. this happens on `fastlane match nuke`
         # We just want to run `git add -A` to commit everything
-        git_push(commands: ["git add -A"], commit_message: custom_message)
+        git_push(commands: ["git add -A -f"], commit_message: custom_message)
       end
 
       def upload_files(files_to_upload: [], custom_message: nil)
